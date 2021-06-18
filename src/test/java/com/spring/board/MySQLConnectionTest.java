@@ -27,7 +27,6 @@ public class MySQLConnectionTest {
         
         try {
             
-            System.out.println("==================== MySQL Connection START ====================");
             logger.info("==================== MySQL Connection START ====================");
              
             Class.forName(DRIVER);
@@ -44,9 +43,9 @@ public class MySQLConnectionTest {
                 String boardContent = rs.getString("BOARD_CONTENT");
                 String boardWriter = rs.getString("BOARD_WRITER");
  
-                System.out.print("boardSubject : " + boardSubject + ", ");
-                System.out.print("boardContent: " + boardContent + ", ");
-                System.out.println("boardWriter: " + boardWriter);
+                logger.info("boardSubject : " + boardSubject + ", ");
+                logger.info("boardContent: " + boardContent + ", ");
+                logger.info("boardWriter: " + boardWriter);
             }
  
             rs.close();
@@ -74,6 +73,6 @@ public class MySQLConnectionTest {
             }
         }
         
-        System.out.println("==================== MySQL Connection END ====================");
+        logger.info("==================== MySQL Connection END ====================");
     }
 }

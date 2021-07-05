@@ -6,10 +6,46 @@
 <title>게시판 목록</title>
  
 <!-- 공통 CSS -->
-<link rel="stylesheet" type="text/css" href="/css/common/common.css"/>
- 
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+<jsp:include page="../layout/header.jsp" />
+<body>
+<div id="wrap">
+    <div id="container">
+        <div class="inner">        
+            <h2>게시글 목록</h2>            
+            <form id="boardForm" name="boardForm">
+                <table class="table table-hover" width="100%" class="table01">
+                    <colgroup>
+                        <col width="10%" />
+                        <col width="25%" />
+                        <col width="10%" />
+                        <col width="15%" />
+                        <col width="20%" />
+                    </colgroup>
+                    <thead>        
+                        <tr>
+                            <th>글번호</th>
+                            <th>제목</th>
+                            <th>조회수</th>
+                            <th>작성자</th>
+                            <th>작성일</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    
+                    </tbody>    
+                </table>
+            </form>            
+            <div class="btn_right mt15">
+                <button type="button" class="btn black mr5" onclick="javascript:goBoardWrite();">작성하기</button>
+            </div>
+        </div>
+    </div>
+</div>
+<jsp:include page="../layout/footer.jsp" />
 <!-- 공통 JavaScript -->
-<script type="text/javascript" src="/js/common/jquery.js"></script>
 <script type="text/javascript">
  
     $(document).ready(function(){    
@@ -31,7 +67,7 @@
  
         $.ajax({    
         
-           url      : "/board/getBoardList",
+           url      : "getBoardList",
            data     : $("#boardForm").serialize(),
            dataType : "JSON",
            cache    : false,
@@ -73,7 +109,7 @@
                 
                 str += "<tr>";
                 str += "<td>"+ boardSeq +"</td>";
-                str += "<td onclick='javascript:goBoardDetail("+ boardSeq +");' style='cursor:Pointer'>"+ boardSubject +"</td>";
+                str += "<td onclick='javascript:goBoardDetail("+ boardSeq +");' style='cursor:Pointer;'>"+ boardSubject +"</td>";
                 str += "<td>"+ boardHits +"</td>";
                 str += "<td>"+ boardWriter +"</td>";    
                 str += "<td>"+ insDate +"</td>";    
@@ -92,40 +128,5 @@
     }
     
 </script>
-</head>
-<body>
-<div id="wrap">
-    <div id="container">
-        <div class="inner">        
-            <h2>게시글 목록</h2>            
-            <form id="boardForm" name="boardForm">
-                <table width="100%" class="table01">
-                    <colgroup>
-                        <col width="10%" />
-                        <col width="25%" />
-                        <col width="10%" />
-                        <col width="15%" />
-                        <col width="20%" />
-                    </colgroup>
-                    <thead>        
-                        <tr>
-                            <th>글번호</th>
-                            <th>제목</th>
-                            <th>조회수</th>
-                            <th>작성자</th>
-                            <th>작성일</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbody">
-                    
-                    </tbody>    
-                </table>
-            </form>            
-            <div class="btn_right mt15">
-                <button type="button" class="btn black mr5" onclick="javascript:goBoardWrite();">작성하기</button>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 </html>

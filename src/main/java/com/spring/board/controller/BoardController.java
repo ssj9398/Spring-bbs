@@ -15,7 +15,7 @@ import com.spring.board.form.BoardForm;
 import com.spring.board.service.BoardService;
  
 @Controller
-@RequestMapping(value = "/board")
+@RequestMapping(value = "/")
 public class BoardController {
  
     @Autowired

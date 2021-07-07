@@ -25,7 +25,7 @@
         <div class="inner">    
             <h2>게시글 상세</h2>
             <form id="boardForm" name="boardForm">    
-                <table width="100%" class="table02">
+                <table class="table table-hover" width="100%" class="table02">
                 <caption><strong><span class="t_red">*</span> 표시는 필수입력 항목입니다.</strong></caption>
                     <colgroup>
                          <col width="20%">

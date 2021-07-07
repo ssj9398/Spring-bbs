@@ -11,6 +11,7 @@
 </head>
 <jsp:include page="../layout/header.jsp" />
 <body>
+
 <div id="wrap">
     <div id="container">
         <div class="inner">        
